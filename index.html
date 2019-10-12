@@ -1,0 +1,753 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta charset="UTF-8">
+	<title>CTP FORTUNA</title>
+	
+	<link rel="shortcut icon" href="img/logo.png">
+	<link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+	
+	
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	
+	
+	
+<style>
+	
+	
+	
+	@import url('https://fonts.googleapis.com/css?family=Poppins:300,400&display=swap');
+
+* {
+	outline: none !important;
+	scroll-behavior: smooth;
+}
+
+.jumbotron {
+    padding: 2rem 1rem;
+    margin-bottom:0 !important; 
+    background-color: #e9ecef;
+    border-radius: .3rem;
+}
+
+.colores:before {
+	content: '';
+	color: #fff !important;
+}
+
+body {
+	font-family: 'Poppins', sans-serif;
+}
+
+header {
+	position: relative;
+	z-index: 10000000;
+}
+
+p {
+	font-size: 1.15rem;
+}
+
+.navbar {
+	background: transparent !important;
+	transition: 0.5s;
+}
+
+.navbar.scrolled {
+	background: #000 !important;
+	transition: 0.5s;
+}
+
+
+.navbar-light .navbar-nav .active>.nav-link, .navbar-light .navbar-nav .nav-link.active, .navbar-light .navbar-nav .nav-link.show, .navbar-light .navbar-nav .show>.nav-link {
+    color: #000 !important;
+	background: #fff !important;
+}
+
+
+
+.navbar-light .navbar-nav .active>.nav-link {
+	color: #000;
+}
+
+.navbar-light .navbar-nav .active>.nav-link:hover {
+	color: #000 !important;
+}
+
+
+.navbar-light .navbar-nav .nav-link {
+    color: #fff !important;
+}
+
+.navbar-light .navbar-nav .nav-link:hover {
+    background: #fff !important;
+	color: #000 !important;
+	
+}
+
+.navbar-light .navbar-nav .nav-link:hover,
+.navbar-light .navbar-nav .nav-link:focus{
+    color: #000;
+}
+
+
+
+.navbar-light .navbar-brand,.navbar-light .navbar-brand:hover,.navbar-light .navbar-brand:focus,.navbar-light .navbar-brand:visited 
+{
+	color: rgba(255,255,255,1) !important;
+	font-size: 2rem !important;
+	font-weight: 600 !important;
+}
+
+
+.banner {
+	position: relative;
+	top: 0;
+	width: 100%;
+	height: 100vh;
+	background: url(/img/fondo1.jpg) no-repeat;
+	background-size:cover;
+	margin-bottom: 0;
+}
+
+.banner:before,.sec2:before,.contact:before {
+	content: '';
+	position: absolute;
+	top:0;
+	left: 0;
+	width: 100%;
+	height: 400px;
+	background: linear-gradient(#000, transparent);
+	pointer-events: none;
+	margin-bottom: 0;
+}
+
+.banner:after,.sec2:after,.contact:after {
+	content: '';
+	position: absolute;
+	bottom:0;
+	left: 0;
+	width: 100%;
+	height: 400px;
+	background: linear-gradient(360deg, #000, transparent);
+	pointer-events: none;
+	margin-bottom: 0;
+}
+
+
+.height100p {
+	height: 100vh;
+}
+
+.height {
+	height: 100%;
+}
+
+
+.contentBox {
+	position: relative;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	z-index: 10;
+	top: 140px;
+}
+
+.contentBox h1 {
+	font-weight: 800;
+	color: #fff;
+	text-transform: uppercase;
+	font-size: 5rem;
+}
+
+.contentBox p {
+	color: #fff;
+	font-size: 1.3rem;
+	font-weight: 600;
+}
+
+.sec1 {
+	padding: 100px 0;
+	background: #000;
+}
+
+.headerText {
+	color: #fff;
+	font-weight: 400;
+}
+
+
+.headerText h2 {
+	font-size: 2.5rem;
+	margin-bottom: 20px;
+}
+
+.placeBox {
+	position: relative;
+	max-width: 300px;
+	height: 400px;
+	margin: 0 auto;
+	background: #000;
+	margin-top: 30px;
+}
+
+
+.placeBox .imgBx {
+	width: 100%;
+	height: 100%;
+}
+
+
+.placeBox .imgBx img {
+	object-fit: cover;
+	width: 100%;
+	height: 100%;
+}
+
+.placeBox .content {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	display: flex;
+	justify-content: baseline;
+	align-items: flex-end;
+}
+
+.placeBox .content h3 {
+	position: relative;
+	margin: 0;
+	padding: 10px;
+	background: rgba(0,0,0,.95);
+	color: #fff;
+	font-size: 20px;
+	font-weight: 600;
+	width: 100%;
+	text-align: center;
+}
+
+.placeBox .content h3 span {
+	font-size: 16px;
+	font-weight: 500;
+}
+
+.sec2 {
+	position: relative;
+	background: url(/img/fondo2.jpg)no-repeat;
+	background-size: cover;
+	height: 100vh;
+}
+
+.sec2 h2 {
+	font-weight: 800;
+	color: #fff;
+	text-transform: uppercase;
+	font-size: 4.5rem;
+}
+
+.btnD1 {
+	border: 2px solid #fff !important;
+	color: #000 !important;
+	background: #fff !important;
+	border-radius: 50px !important;
+	padding: 15px 50px !important;
+	font-size: 1.15rem !important;
+	outline: none !important;
+	font-weight: 500 !important;
+	margin-top: 20px !important;
+}
+
+
+
+.blog {
+	position: relative;
+	padding: 100px 0;
+	background: #000;
+}
+
+.blogpost {
+	position: relative;
+	width: 100%;
+	margin-top: 30px;
+	background: #fff;
+}
+
+.blogpost .imgBx {
+	height: 400px;
+}
+
+.blogpost .imgBx img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+
+.blogpost .content {
+	padding: 15px;
+}
+
+.blogpost .content h1 {
+	margin: 0;
+	padding: 0 0 10px;
+	font-weight: 600;
+	font-size: 1.5rem;
+}
+
+.btnD2,.btnD2:hover {
+	background: #262626 !important;
+	color: #fff !important;
+	border-radius: 30px !important;
+	padding: 10px 20px !important;
+	float: right;
+}
+
+.contact {
+	position: relative;
+	padding: 100px 0;
+	background: url(/img/fondo3.jpg)no-repeat;
+	background-size: cover;
+	min-height: 100vh;
+}
+
+.contact form {
+	position: relative;
+	z-index: 1000;
+}
+.contact .form-control {
+	background: transparent !important;
+	border: none !important;
+	border-bottom: 2px solid rgba(255,255,255,.2) !important;
+	height: 50px !important;
+	border-radius: 0 !important;
+	background: rgba(0,0,0,.6) !important;
+	color: #fff !important;
+	font-size: 1.25rem !important;
+}
+
+.contact .form-control:focus, .contact .form-control:hover {
+	border: none !important;
+	border-bottom: 2px solid rgba(255,255,255,1) !important;
+	box-shadow: none !important;
+}
+
+.contact .textarea {
+	min-height: 100px;
+}
+
+.contact label {
+	color: #fff;
+	font-size: 1.25rem;
+}
+
+footer {
+	background: #000;
+	padding: 50px 0 0;
+}
+
+.sci {
+	margin-right: 0;
+	padding: 0;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.sci li {
+	list-style: none;
+	margin: 0 20px;
+}
+
+.sci li a {
+	color: #777;
+	font-size: 2em;
+	transition: 0.5s;
+}
+
+.sci li a:hover {
+	color: #fff;
+}
+
+.cpryt {
+	margin-top: 20px;
+	text-align: center;
+	color: #777;
+}
+
+
+
+.cpryt a,.cpryt a:hover {
+	
+	color: #fff;
+}
+
+@media (min-width: 992px) {
+	.navbar-expand-lg .navbar-nav .nav-link {
+		padding-right: 1rem;
+		padding-left: 1rem;
+	}
+}
+
+@media (max-width: 992px) {
+	.navbar-light .navbar-toggler {
+		background: #fff;
+		border-radius: 0;
+	}
+	
+	.banner {
+		min-height: 100vh;
+		padding: 100px 0;
+	}
+	
+	.contentBox h1, .sec2 h2 {
+		font-size: 2rem;
+	}
+}
+
+	
+	
+	
+	
+</style>
+	
+	
+	
+</head>  
+<body data-spy="scroll" data-target=".navbar" data-offset="50">
+
+<header>
+<nav class="navbar navbar-expand-lg navbar-light fixed-top">
+ <div class="container">
+ 	
+ 	<a class="navbar-brand" href="#"><img src="img/logo.png" height="45" alt=""> Fortuna</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav ml-lg-auto">
+      <li class="nav-item">
+        <a class="nav-link" href="#home">Inicio <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#explore">Especialidades</a>
+      </li>
+       <li class="nav-item">
+        <a class="nav-link" href="#adventure">Seccion Nocturna</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#blog">¿Quienes somos?</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#contact">Contacto</a>
+      </li>
+    </ul>
+  </div>
+ 	
+ </div>
+  
+</nav>
+</header>
+<div class="jumbotron jumbotron-fluid height100p banner" id="home">
+  <div class="container h100">
+   <div class="contentBox h100">
+   	<div>
+   		<h1>Bienvenido</h1>
+   		<p>Este es el sitio web del Colegio Tecnico y Profesional de Fortuna de Bagaces, esperamos que encuentre todo lo que necesita.</p>
+   	</div>
+   </div>
+  </div>
+</div>
+<section class="sec1" id="explore">
+	<div class="container">
+		<div class="row">
+			<div class="offset-sm-2 col-sm-8">
+				<div class="headerText text-center">
+					<h2>Distintas Especialidades</h2>
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos nihil pariatur hic! Ipsam sequi facilis assumenda fugit, atque fuga quaerat aspernatur quisquam quidem repellendus dignissimos, laborum, esse placeat blanditiis iure?</p>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-sm-4">
+				<div class="placeBox">
+					<div class="imgBx">
+						<img src="img/turismo2k19.jpg" class="img-fluid" alt="">
+					</div>
+					<div class="content">
+						<h3>Turismo<br><span>2018</span></h3>
+					</div>
+				</div>
+			</div>
+			<div class="col-sm-4">
+				<div class="placeBox">
+					<div class="imgBx">
+						<img src="img/info1.jpg" class="img-fluid" alt="">
+					</div>
+					<div class="content">
+						<h3>Informatica en Redes<br><span>2018</span></h3>
+					</div>
+				</div>
+			</div>
+			<div class="col-sm-4">
+				<div class="placeBox">
+					<div class="imgBx">
+						<img src="img/ayb191.jpeg" class="img-fluid" alt="">
+					</div>
+					<div class="content">
+						<h3>Alimentos y bebidas<br><span>2018</span></h3>
+					</div>
+				</div>
+			</div>
+			<div class="col-sm-4">
+				<div class="placeBox">
+					<div class="imgBx">
+						<img src="img/secre1.jpg" class="img-fluid" alt="">
+					</div>
+					<div class="content">
+						<h3>Secretariado<br><span>2019</span></h3>
+					</div>
+				</div>
+			</div>
+			<div class="col-sm-4">
+				<div class="placeBox">
+					<div class="imgBx">
+						<img src="img/agro1.jpg" class="img-fluid" alt="">
+					</div>
+					<div class="content">
+						<h3>AgroIndustria<br><span>2018</span></h3>
+					</div>
+				</div>
+			</div>
+			<div class="col-sm-4">
+				<div class="placeBox">
+					<div class="imgBx">
+						<img src="img/ayb191.jpe" class="img-fluid" alt="no hay no existe XD">
+					</div>
+					<div class="content">
+						<h3>Robotica<br><span>2019</span></h3>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+
+<section class="sec2" id="adventure">
+	<div class="container h100">
+		<div class="contentBox h100">
+			<div>
+				<h2>Seccion Nocturna</h2>
+				<p>Se abre las matriculas para la seccion nocturna que se realizara en el 2020 y requiere tener ganado bachillerato y encontrarse estudiando actualmente</p>
+				<a href="#" class="btn btnD1">Read More</a>
+				<div class="clearfix"></div>
+			</div>
+		</div>
+	</div>
+</section>
+
+<section class="blog" id="blog">
+	<div class="container">
+		<div class="row">
+			<div class="offset-sm-2 col-sm-8">
+				<div class="headerText text-center">
+					<h2>Actividades</h2>
+					<p>Distintas actividades realizadas en cada especialidad, asi como las giras y diferentes trabajos realizados en cada una de ellas.</p>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-sm-6">
+				<div class="blogpost">
+					<div class="imgBx">
+						<img src="img/turismo191.jpeg" class="img-fluid" alt="">
+					</div>
+					<div class="content">
+						<h1>Gira de la especialidad de Turismo 2018</h1>
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus quo nam vero eum accusamus nisi. Eos quae omnis consequatur iusto, recusandae. Laudantium placeat, ex fuga, odio dolores repellat veniam earum....</p>
+						<a href="#" class="btn btnD2">Leer Mas</a>
+						<div class="clearfix"></div>
+					</div>
+				</div>
+			</div>
+			<div class="col-sm-6">
+				<div class="blogpost">
+					<div class="imgBx">
+						<img src="img/turismo19.jpeg" class="img-fluid" alt="">
+					</div>
+					<div class="content">
+						<h1>Gira de la especialidad de Turismo 2019</h1>
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus quo nam vero eum accusamus nisi. Eos quae omnis consequatur iusto, recusandae. Laudantium placeat, ex fuga, odio dolores repellat veniam earum....</p>
+						<a href="#" class="btn btnD2">Leer Mas</a>
+						<div class="clearfix"></div>
+					</div>
+				</div>
+			</div>
+			<div class="col-sm-6">
+				<div class="blogpost">
+					<div class="imgBx">
+						<img src="img/agro2.jpg" class="img-fluid" alt="">
+					</div>
+					<div class="content">
+						<h1>Gira de la especialidad de AgroIndustria</h1>
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus quo nam vero eum accusamus nisi. Eos quae omnis consequatur iusto, recusandae. Laudantium placeat, ex fuga, odio dolores repellat veniam earum....</p>
+						<a href="#" class="btn btnD2">Leer Mas</a>
+						<div class="clearfix"></div>
+					</div>
+				</div>
+			</div>
+			<div class="col-sm-6">
+				<div class="blogpost">
+					<div class="imgBx">
+						<img src="img/turismo2k19.jpg" class="img-fluid" alt="">
+					</div>
+					<div class="content">
+						<h1>Gira de la especialidad de Turismo 2019</h1>
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus quo nam vero eum accusamus nisi. Eos quae omnis consequatur iusto, recusandae. Laudantium placeat, ex fuga, odio dolores repellat veniam earum....</p>
+						<a href="#" class="btn btnD2">Leer Mas</a>
+						<div class="clearfix"></div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+
+
+<section class="contact" id="contact">
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-12">
+				<div class="headerText text-center">
+					<h2>Contactanos</h2>
+					<p>Atenderemos todas sus necesidades lo antes posible</p>
+				</div>
+			</div>
+		</div>
+		<div class="row clearfix">
+			<div class="offset-sm-2 col-sm-8">
+			<form>
+				<div class="form-group">
+					<label>Nombre</label>
+					<input type="text" name="" class="form-control">
+				</div>
+				<div class="form-group">
+					<label>Correo</label>
+					<input type="text" name="" class="form-control">
+				</div>
+				<div class="form-group">
+					<label>Telefono</label>
+					<input type="text" name="" class="form-control">
+				</div>
+				<div class="form-group">
+					<label>Mensaje</label>
+					<textarea class="form-control textarea" name=""></textarea>
+				</div>
+				<div class="form-group text-center">
+					<button class="btn btnD1">Enviar</button>
+				</div>
+			</form>
+				
+			</div>
+		</div>
+	</div>
+</section>
+
+<footer>
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-12">
+				<ul class="sci">
+					<li><a href="#"><i class="fa fa-facebook"></i></a></li>
+					<li><a href="#"><i class="fa fa-twitter"></i></a></li>
+					<li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+					<li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+					<li><a href="#"><i class="fa fa-instagram"></i></a></li>
+				</ul>
+				<p class="cpryt">@ Copyright 2019 por <a href="">Wilder Hernandez Guillen</a></p>
+			</div>
+		</div>
+	</div>
+</footer>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+<script type="text/javascript">
+    $(document).scroll(function(){
+		$('.navbar').toggleClass('scrolled', $(this).scrollTop() > $('.navbar').height());
+	});
+</script>
+
+ <script>
+			$(function(){
+    $(document).scroll(function(){
+        if($(this).scrollTop() > 100) {
+            $('.nav-link').removeClass('colores');  
+        }
+        if($(this).scrollTop() < 1) {        
+         $('.nav-link').addClass('colores');   
+        }
+    });
+});
+	    </script>
+
+	
+	 
+<script>
+  function colapsar() {
+
+
+   $('.nav-link').addClass('colores');
+   
+
+
+
+
+
+                              
+      }
+    window.onload = colapsar;
+</script>
+
+
+<script>
+	
+	
+</script>
+</body>
+</html>
