@@ -25,6 +25,11 @@
 	outline: none !important;
 	scroll-behavior: smooth;
 }
+	
+	
+	.navbar-collapse.show {
+		background: rgba(0,0,0,.4);
+	}
 
 .jumbotron {
     padding: 2rem 1rem;
@@ -424,7 +429,7 @@ footer {
  <div class="container">
  	
  	<a class="navbar-brand" href="#"><img src="img/logo.png" height="45" alt=""> Fortuna</a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+  <button id="colapsador" class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
 
@@ -745,9 +750,36 @@ footer {
 </script>
 
 
+
+
+
+
+
 <script>
 	
 	
+	
+	
+	nav-link
 </script>
+
+
+<script>
+    $('.nav-link').click(cerrarmenu);
+function cerrarmenu() {
+    if ( $('#navbarSupportedContent').hasClass('show') ) { 
+        $('#navbarSupportedContent').removeClass('show');
+        $('#colapsador').addClass('collapsed');
+        
+
+
+
+    } else {
+
+    	
+    }
+}
+	    </script>
+
 </body>
 </html>
