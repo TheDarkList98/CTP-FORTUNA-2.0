@@ -41,6 +41,18 @@
 
   onLoadComplete: hidePreLoader
 });
+		
+
+    $("img").queryLoader2({
+  barColor: "#555566",
+  backgroundColor: "#fff",
+  percentage: true,
+  barHeight: 1,
+  minimumTime: 4000,
+  completeAnimation: "grow",
+
+  onLoadComplete: hidePreLoader
+});
 
     function hidePreLoader() {
   $("#precarga").hide();
